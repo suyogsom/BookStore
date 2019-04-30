@@ -2,12 +2,11 @@ package com.bookstore.it;
 
 import static io.restassured.RestAssured.given;
 
-import org.junit.experimental.categories.Category;
 import org.junit.jupiter.api.Test;
 
 import io.restassured.response.Response;
 
-public class TextBooksIntegrationTest extends BaseTest {
+public class TextBooksTestApi extends BaseTest {
 	
 	@Test
 	public void testGetBooks() {
