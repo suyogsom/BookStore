@@ -15,7 +15,7 @@ public class TextBooksTestApi extends BaseTest {
 								   .get("/textbooks");
 		
 		//JsonPath getResponse = new JsonPath(response.asString());
-		//assertThat("101",getResponse.get("[0].id"));
+		//assertThat("1001",getResponse.get("[0].id"));
 		System.out.print(response.asString());
 	}
 }
