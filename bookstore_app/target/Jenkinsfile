@@ -2,18 +2,23 @@ pipeline {
     agent any
 
     stages {
-        stage('compile stage') {
+        stages {
+        stage('Build') {
             steps {
-                withMaven(maven:'Maven'){
-                	sh 'mvn clean compile'
-                }
+                sh 'make' 
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
             }
         }
-        stage('Testing stage') {
+ 	}
+        stages {
+        stage('Test') {
             steps {
-                withMaven(maven:'Maven'){
-                	sh 'mvn clean test'
-                }
+                /* `make check` returns non-zero on test failures,
+                * using `true` to allow the Pipeline to continue nonetheless
+                */
+                sh 'make check || true' 
+                junit '**/target/*.xml' 
+            }
         }
     }
 }
