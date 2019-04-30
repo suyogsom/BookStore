@@ -12,6 +12,33 @@
 	
 	<artifactId>bookstore-server</artifactId>
 	
+	<profiles>                                                                                                                      
+  <profile>                                                                                                                     
+    <id>test-java</id>                                                                                                          
+    <build>                                                                                                                     
+      <plugins>                                                                                                                 
+        <plugin>                                                                                                                
+          <groupId>org.codehaus.mojo</groupId>                                                                                  
+          <artifactId>exec-maven-plugin</artifactId>                                                                            
+          <version>1.1.1</version>                                                                                              
+          <executions>                                                                                                          
+            <execution>                                                                                                         
+              <phase>test</phase>                                                                                               
+              <goals>                                                                                                           
+                <goal>java</goal>                                                                                               
+              </goals>                                                                                                          
+              <configuration>                                                                                                   
+                <mainClass>com.bookstore.app.StoreApiDatabaseApplication</mainClass>                                                                      
+              </configuration>                                                                                                  
+            </execution>                                                                                                        
+          </executions>                                                                                                         
+        </plugin>                                                                                                               
+      </plugins>                                                                                                                
+    </build>                                                                                                                    
+  </profile>                                                                                                                    
+</profiles> 
+	
+	
 	<build>
 		<plugins>
 			<plugin>
