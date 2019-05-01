@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn clean test'
+                sh 'mvn -f path/to/pom.xml clean test'
             }
         }
     }
