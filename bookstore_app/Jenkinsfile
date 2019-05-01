@@ -1,13 +1,4 @@
 node{
-  
-        stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
-            }
-        }
 
         stage ('Build') {
          def mvnHome = tool name: 'maven-3.6.0', type:'maven'
@@ -15,4 +6,3 @@ node{
         }
     }
   
-}
