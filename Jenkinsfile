@@ -1,13 +1,28 @@
-node{
-
-		stage('SCM checkout'){
-		git 'https://github.com/suyogsom/BookStore'
-		}
-
+pipeline {
+    agent any
+    tools {
+        maven 'maven-3.6.0'
+        jdk 'jdk8'
+    }
+    stages {
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''
+            }
+        }
 
         stage ('Build') {
-         def mvnHome = tool name: 'maven-3.6.0', type: 'maven'
-         sh "${mvnHome}/bin/mvn package"
+            steps {
+                sh 'mvn -Dmaven.test.failure.ignore=true install' 
+            }
+            post {
+                success {
+                    junit 'target/surefire-reports/**/*.xml' 
+                }
+            }
         }
     }
-  
+}
