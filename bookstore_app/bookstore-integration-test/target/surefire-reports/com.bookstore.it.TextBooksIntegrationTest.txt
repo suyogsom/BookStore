@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.bookstore.it.TextBooksIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.934 s <<< FAILURE! - in com.bookstore.it.TextBooksIntegrationTest
+testGetBooks  Time elapsed: 1.476 s  <<< ERROR!
+java.net.ConnectException: Connection refused (Connection refused)
+	at com.bookstore.it.TextBooksIntegrationTest.testGetBooks(TextBooksIntegrationTest.java:15)
+

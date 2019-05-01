@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.bookstore.it.BooksApiTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 13.455 s <<< FAILURE! - in com.bookstore.it.BooksApiTest
-testGetBooks  Time elapsed: 5.706 s  <<< ERROR!
-java.net.ConnectException: Connection refused: connect
-	at com.bookstore.it.BooksApiTest.testGetBooks(BooksApiTest.java:15)
-
