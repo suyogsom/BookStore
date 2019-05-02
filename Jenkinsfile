@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('build with unit test') {
             steps {
-                sh 'mvn -f bookstore-server/pom.xml clean package'
+                sh 'mvn -f bookstore_app/bookstore-server/pom.xml clean package'
             }
         }
         stage('integration test') {
             steps {
-                sh 'mvn -f bookstore-integration-test/pom.xml clean test'
+                sh 'mvn -f bookstore_app/bookstore-integration-test/pom.xml clean test'
             }
         }
     }
