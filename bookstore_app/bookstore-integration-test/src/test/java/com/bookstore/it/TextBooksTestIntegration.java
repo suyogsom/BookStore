@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import io.restassured.response.Response;
 
-public class TextBooksIntegrationTest extends BaseTest {
+public class TextBooksTestIntegration extends BaseTest {
 	
 	@Test
 	public void testGetBooks() {

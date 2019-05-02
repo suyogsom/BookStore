@@ -13,34 +13,5 @@
 	<artifactId>bookstore-server</artifactId>
 	<packaging>jar</packaging>
 	
-
-	
-	<!--
-		Specify the execution configuration for the integration tests.
-		More info: http://stackoverflow.com/q/40664101/2780334
-	
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<executable>true</executable>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-						<configuration>
-							<classifier>exec</classifier>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>  -->
-	
-	
 		
 </project>
