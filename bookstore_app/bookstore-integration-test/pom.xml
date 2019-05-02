@@ -12,7 +12,11 @@
 	
 	<artifactId>bookstore-integration-test</artifactId>
 	<packaging>jar</packaging>
-
+	
+	<properties>
+		<skip.unit.tests>true</skip.unit.tests>
+		<skip.integration.tests>false</skip.integration.tests>	
+	</properties>
 	
 	    <dependencies>
         <dependency>
