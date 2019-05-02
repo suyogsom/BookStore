@@ -35,20 +35,14 @@
     <build>
     	<plugins>
     	<plugin>
-     		<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-maven-plugin</artifactId>
+     		  <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
       <executions>
         <execution>
-          <phase>pre-integration-test</phase>
           <goals>
-            <goal>execute</goal>
-          </goals>
-          </execution>
-         <execution>
-          <phase>post-integration-test</phase>
-          <goals>
-            <goal>execute</goal>
-          </goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
           </execution>
       </executions>
     </plugin>
