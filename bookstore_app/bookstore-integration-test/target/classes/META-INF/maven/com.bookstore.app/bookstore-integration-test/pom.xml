@@ -39,15 +39,15 @@
 			<artifactId>spring-boot-maven-plugin</artifactId>
       <executions>
         <execution>
-          <id>pre-integration-test</id>
+          <phase>pre-integration-test</phase>
           <goals>
-            <goal>start</goal>
+            <goal>execute</goal>
           </goals>
           </execution>
          <execution>
-          <id>post-integration-test</id>
+          <phase>post-integration-test</phase>
           <goals>
-            <goal>stop</goal>
+            <goal>execute</goal>
           </goals>
           </execution>
       </executions>
