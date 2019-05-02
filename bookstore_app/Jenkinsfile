@@ -1,13 +1,10 @@
-node{
-
-		stage('SCM checkout'){
-		git 'https://github.com/suyogsom/BookStore'
-		}
-
-
-        stage ('Build') {
-         def mvnHome = tool name: 'maven-3.6.0', type: 'maven'
-         sh "${mvnHome}/bin/mvn package"
+pipeline {
+    agent any
+    stages {
+        stage('build') {
+            steps {
+                sh 'mvn -f bookstore_app/pom.xml clean test'
+            }
         }
     }
-  
+}

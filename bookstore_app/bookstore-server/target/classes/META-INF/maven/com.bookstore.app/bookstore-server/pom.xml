@@ -13,10 +13,12 @@
 	<artifactId>bookstore-server</artifactId>
 	<packaging>jar</packaging>
 	
+
+	
 	<!--
 		Specify the execution configuration for the integration tests.
 		More info: http://stackoverflow.com/q/40664101/2780334
-	-->
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -37,6 +39,8 @@
 				</executions>
 			</plugin>
 		</plugins>
-	</build>
+	</build>  -->
+	
+	
 		
 </project>
