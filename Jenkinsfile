@@ -9,7 +9,7 @@ pipeline {
         }
         stage('integration test') {
             steps {
-                sh 'mvn -f bookstore_app/bookstore-integration-test/pom.xml clean test'
+                sh 'mvn -f bookstore_app/bookstore-integration-test/pom.xml clean package'
             }
         }
     }
