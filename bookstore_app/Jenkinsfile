@@ -8,7 +8,7 @@ pipeline {
         }
         stage('app running with integration') {
             steps {
-                sh'java -jar ${user.home}/bookstoreartifactory/*.jar'
+                bat ' start java -jar ${user.home}/bookstoreartifactory/*.jar'
                 sh 'mvn -f bookstore_app/bookstore-integration-test/pom.xml clean test'
             }
         }
