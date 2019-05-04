@@ -25,8 +25,10 @@ public class TextBooksTestIntegration extends BaseTest {
 	public void testRandom() {
 		System.out.println("Basedir : " + System.getProperty("user.dir"));
 		
-		Properties properties = System.getProperties();
-		properties.forEach((i,j) -> System.out.println("Property " + i + " value " + j));
+		//Properties properties = System.getProperties();
+		//properties.forEach((i,j) -> System.out.println("Property " + i + " value " + j));
+		
+		System.out.println("user home : " + System.getProperty("user.home"));
 	
 	}
 }
