@@ -1,14 +1,20 @@
 pipeline {
     agent any
     stages {
-        stage('build with unit test') {
+        stage('build with unit test, package and store the jar') {
             steps {
                 sh 'mvn -f bookstore_app/bookstore-server/pom.xml clean package'
             }
         }
-        stage('app running with integration') {
+        
+        stage('deploy app') {
             steps {
-                bat ' start java -jar ${user.home}/bookstoreartifactory/*.jar'
+                sh 'java -jar ${user.home}/bookstoreartifactory/*.jar'
+            }
+        }
+        
+        stage('run integration tests') {
+            steps {
                 sh 'mvn -f bookstore_app/bookstore-integration-test/pom.xml clean test'
             }
         }

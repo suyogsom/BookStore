@@ -16,30 +16,33 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+		    <executions>
+		        <execution>
+		            <id>deploy-to-local-directory</id>
+		            <phase>package</phase>
+		            <goals>
+		                <goal>copy-resources</goal>
+		            </goals>
+		            <configuration>
+                        <outputDirectory>${user.home}/bookstoreartifactory</outputDirectory>
+                        <resources>
+                            <resource>
+                                <directory>${project.build.directory}</directory>
+                                <includes>
+                                    <include>*.jar</include>
+                                </includes>
+                            </resource>
+                        </resources>
+                    </configuration>
+		        </execution>
+		    </executions>
+		</plugin>
 			
-			<plugin>
-		      <groupId>org.apache.maven.plugins</groupId>
-		      <artifactId>maven-jar-plugin</artifactId>
-		      <version>2.3.1</version>
-		      <configuration>
-		        <outputDirectory>${project.build.directory}</outputDirectory>
-		      </configuration>
-    		</plugin>
-    		
-    		<plugin>
-		    <groupId>com.github.goldin</groupId>
-		    <artifactId>copy-maven-plugin</artifactId>
-		    <version>0.2.5</version>
+    		<!-- <plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>copy-maven-plugin</artifactId>
 		    <executions>
 		        <execution>
 		            <id>deploy-to-local-directory</id>
@@ -64,6 +67,8 @@
 		        </execution>
 		    </executions>
 		</plugin>
+			 -->
+			
 			
 		</plugins>
 	</build>
