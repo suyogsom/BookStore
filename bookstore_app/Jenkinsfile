@@ -13,7 +13,7 @@ pipeline {
             	echo 'Deploying app...'
             	sh 'pwd'
             	sh 'ls -l'
-                sh 'java -jar bookstore-integration-test/target/classes/*.jar'
+                sh 'java -jar bookstore_app/bookstore-integration-test/target/classes/*.jar'
             }
         }
         
