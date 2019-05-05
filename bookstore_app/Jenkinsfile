@@ -3,18 +3,21 @@ pipeline {
     stages {
         stage('build with unit test, package and store the jar') {
             steps {
+            	echo 'Building app...'
                 sh 'mvn -f bookstore_app/bookstore-server/pom.xml clean package'
             }
         }
         
         stage('deploy app') {
             steps {
-                sh 'java -jar ./bookstore-integration-test/target/classes/*.jar'
+            	echo 'Deploying app...'
+                sh 'java -jar bookstore-integration-test/target/classes/*.jar'
             }
         }
         
         stage('run integration tests') {
             steps {
+            	echo 'Running integration tests...'
                 sh 'mvn -f bookstore_app/bookstore-integration-test/pom.xml clean test'
             }
         }
