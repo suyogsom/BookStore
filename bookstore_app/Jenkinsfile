@@ -11,6 +11,8 @@ pipeline {
         stage('deploy app') {
             steps {
             	echo 'Deploying app...'
+            	sh 'pwd'
+            	sh 'ls -l'
                 sh 'java -jar bookstore-integration-test/target/classes/*.jar'
             }
         }
