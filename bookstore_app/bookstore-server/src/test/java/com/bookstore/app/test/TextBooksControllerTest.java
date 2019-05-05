@@ -5,6 +5,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import org.junit.experimental.categories.Category;
 import org.junit.jupiter.api.BeforeEach;
@@ -59,6 +60,17 @@ public class TextBooksControllerTest {
         	System.out.print("\t\tdescription:" + empList.get(i).getDescription());
         }
     }
+    
+	@Test
+	public void testRandom() {
+		System.out.println("Basedir : " + System.getProperty("user.dir"));
+		
+		Properties properties = System.getProperties();
+		properties.forEach((i,j) -> System.out.println("Property " + i + " value " + j));
+		
+		System.out.println("user home : " + System.getProperty("user.home"));
+	
+	}
 	     
 	/*
 	 * @Test public void getEmployeeByIdTest() {

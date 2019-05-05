@@ -13,7 +13,8 @@
 	<artifactId>bookstore-server</artifactId>
 	<packaging>jar</packaging>
 	
-	<build>
+	
+<!-- 	<build>
 		<plugins>
 			<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
@@ -39,38 +40,9 @@
 		        </execution>
 		    </executions>
 		</plugin>
-			
-    		<!-- <plugin>
-		    <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>copy-maven-plugin</artifactId>
-		    <executions>
-		        <execution>
-		            <id>deploy-to-local-directory</id>
-		            <phase>install</phase>
-		            <goals>
-		                <goal>copy</goal>
-		            </goals>
-		            <configuration>
-		                <skipIdentical>false</skipIdentical>
-		                <failIfNotFound>false</failIfNotFound>
-		                <resources>
-		                    <resource>
-		                        <description>Copy artifact to another directory</description>
-		                        <targetPath>${user.home}/bookstoreartifactory</targetPath>
-		                        <directory>${project.build.directory}</directory>
-		                        <includes>
-		                            <include>*.jar</include>
-		                        </includes>
-		                    </resource>
-		                </resources>
-		            </configuration>
-		        </execution>
-		    </executions>
-		</plugin>
-			 -->
-			
+
 			
 		</plugins>
-	</build>
+	</build> -->
 		
 </project>
