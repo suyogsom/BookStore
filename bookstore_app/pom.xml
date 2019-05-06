@@ -109,6 +109,7 @@
 	<!-- this is because IT module was not having main class -->
 	<properties>
     <start-class>com.bookstore.app.main</start-class>
+    <skip.surefire.tests>${skipsTests}</skip.surefire.tests>
     </properties>
 	
 	<!-- build profile -->
@@ -119,18 +120,14 @@
                 <plugins>
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                         
+                        <configuration>                         
                              <excludes>
                                 <exclude>**/*TestIT.java</exclude>
                                 <exclude>**/*IntTest.java</exclude>
-                            </excludes> 
-                           
+                            </excludes>                           
                             <includes>
-                                <include>**/*UnitTest.java</include>
-                               
-                            </includes>  
-                     		               
+                                <include>**/*UnitTest.java</include>                              
+                            </includes>                       		               
                         </configuration>
                     </plugin>
                     <plugin>
@@ -167,36 +164,37 @@
                 </plugins>
             </build>
         </profile>
-        </profiles>
         
-        <!-- <profile>
+        <profile>
         <id>integration-test</id>
             <build>
                 <plugins>
                     <plugin>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                       
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <executions>
+                        	<execution>
+                        	<goals>
+                        		<goal>integration-test</goal>
+                        		<goal>verify</goal>
+                        	</goals>                      	                        		
+                        	 <configuration>                    
                             <excludes>
-                                <exclude>**/*TestIT.java</exclude>
-                                <exclude>**/*IntTest.java</exclude>
-                            </excludes>
-                          
+                                <exclude>**/*UnitTest.java</exclude>
+                            </excludes>                          
                             <includes>
-                                <include>**/*UnitTest.java</include>
-                                <include>**/*Test.java</include>
+                                <include>**/*TestIT.java</include>
                             </includes>
-             				  <skipTests>true</skipTests>                         
+             				  <skipTests>${skip.surefire.tests}</skipTests>                         
                         </configuration>
+                        	</execution>
+                        </executions>                    
                     </plugin>
                 </plugins>
             </build>
         </profile>
+        </profiles>
         
-        </profiles>  -->
-	
-    
- 
+  
  	<build>
         <plugins>
        		<plugin>

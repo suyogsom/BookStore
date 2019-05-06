@@ -18,7 +18,7 @@ pipeline {
         stage('run integration tests') {
             steps {
             	echo 'Running integration tests...'
-                sh 'mvn -f bookstore_app/bookstore-integration-test/pom.xml clean test'
+                sh 'mvn -f bookstore_app/bookstore-integration-test -Pintegration-test clean test'
             	//sh 'mvnw -Prun-it'
             }
         }
