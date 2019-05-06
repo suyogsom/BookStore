@@ -105,8 +105,61 @@
         </dependency>
 
 	</dependencies>
-
- <build>
+	
+	<profiles>
+        <profile>
+            <id>unit-test</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                        <!--  Skip tests whose name end with "IntegrationTest or IntTest" --> 
+                            <!-- <excludes>
+                                <exclude>**/*TestIT.java</exclude>
+                                <exclude>**/*IntTest.java</exclude>
+                            </excludes> -->
+                          <!--  Run only tests whose name end with "UnitTest"  -->
+                            <includes>
+                                <include>**/*UnitTest.java</include>
+                                <include>**/*TestIT.java</include>
+                            </includes>  
+                     		<skipIT>true</skipIT>                
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+        <profile>
+        <id>integration-test</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                       
+                            <excludes>
+                                <exclude>**/*TestIT.java</exclude>
+                                <exclude>**/*IntTest.java</exclude>
+                            </excludes>
+                          
+                            <includes>
+                                <include>**/*UnitTest.java</include>
+                                <include>**/*Test.java</include>
+                            </includes>
+             				  <skipTests>true</skipTests>                         
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        
+        </profiles>
+	
+    
+ 
+ 	<build>
         <plugins>
         <plugin>
 				<groupId>org.springframework.boot</groupId>

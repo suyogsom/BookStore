@@ -13,36 +13,4 @@
 	<artifactId>bookstore-server</artifactId>
 	<packaging>jar</packaging>
 	
-	
-<!-- 	<build>
-		<plugins>
-			<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-resources-plugin</artifactId>
-		    <executions>
-		        <execution>
-		            <id>deploy-to-local-directory</id>
-		            <phase>package</phase>
-		            <goals>
-		                <goal>copy-resources</goal>
-		            </goals>
-		            <configuration>
-                        <outputDirectory>${user.home}/bookstoreartifactory</outputDirectory>
-                        <resources>
-                            <resource>
-                                <directory>${project.build.directory}</directory>
-                                <includes>
-                                    <include>*.jar</include>
-                                </includes>
-                            </resource>
-                        </resources>
-                    </configuration>
-		        </execution>
-		    </executions>
-		</plugin>
-
-			
-		</plugins>
-	</build> -->
-		
 </project>
