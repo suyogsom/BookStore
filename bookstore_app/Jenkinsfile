@@ -4,8 +4,7 @@ pipeline {
         stage('build with unit test, package and store the jar') {
             steps {
             	echo 'Building app...'
-                sh 'cd bookstore_app/bookstore-server'
-                sh'mvn -Punit-test clean install'
+                sh 'mvn -f bookstore_app/bookstore-server -Punit-test clean install'
             }
         }
         
