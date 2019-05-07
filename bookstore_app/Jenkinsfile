@@ -4,7 +4,8 @@ pipeline {
         stage('build with unit test, package and store the jar') {
             steps {
             	echo 'Building app...'
-                sh 'mvn -f bookstore_app -Pbuild clean install  -Dskip.it=true'
+                sh 'mvn -f bookstore_app -Pbuild clean install '
+                //sh 'mvn -f bookstore_app -Pbuild clean install  -Dskip.it=true'
             }
         }
         
@@ -18,8 +19,8 @@ pipeline {
         stage('run integration tests') {
             steps {
             	echo 'Running integration tests...'
-                sh 'mvn -f bookstore_app -Pintegration clean test -DskipUTs'
-            	//sh 'mvnw -Prun-it'
+                sh 'mvn -f bookstore_app -Pintegration clean test'
+            	//sh 'mvn -f bookstore_app -Pintegration clean test -DskipUTs'
             }
         }
     }
