@@ -20,7 +20,7 @@ import com.bookstore.app.services.TextBooksService;
 
 
 @RunWith(MockitoJUnitRunner.class)
-public class TextBooksControllerUnitTest {
+public class TextBooksControllerTest {
 	
     @InjectMocks
     TextBooksController textBooksController;
