@@ -179,8 +179,8 @@
                             <includes>
                                 <include>**/*TestIT.java</include>                              
                             </includes>
-				        		<skipTests>${skipTests}</skipTests>
-				        		<skipUTs>${skipUTs}</skipUTs>
+				        		<!-- <skipTests>${skipTests}</skipTests>
+				        		<skipUTs>${skipUTs}</skipUTs> -->
 				        </configuration> 
 				        </plugin>                 		                                   
                 </plugins>

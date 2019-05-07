@@ -1,0 +1,5 @@
+com/bookstore/internal/RestClient.class
+com/bookstore/it/TextBooksTestIT.class
+com/bookstore/it/BaseTest.class
+com/bookstore/BookstoreSpringTestConfig.class
+com/bookstore/AbstractBookStoreTest.class
