@@ -121,52 +121,8 @@
 
 	</dependencies>
 	
-	<!-- this is because IT module was not having main class -->
-	<!-- <properties>
-    <start-class>com.bookstore.app.main</start-class>
-    <skip.surefire.tests>${skipTests}</skip.surefire.tests>
-    </properties> -->
-	 
-	<!-- <profiles>
-        <profile>
-            <id>build</id>
-            	<pl
-                    <plugin>
-				        <groupId>org.springframework.boot</groupId>
-				        <artifactId>spring-boot-maven-plugin</artifactId>
-				        <executions>
-				          <execution>
-				            <id>pre-integration-test</id>
-				            <goals>
-				              <goal>start</goal>
-				            </goals>
-				            <configuration>
-				              <skip>${skip.it}</skip>
-				            </configuration>
-				          </execution>
-				          <execution>
-				            <id>post-integration-test</id>
-				            <goals>
-				              <goal>stop</goal>
-				            </goals>
-				            <configuration>
-				              <skip>${skip.it}</skip>
-				            </configuration>
-				          </execution>
-				        </executions>
-				      </plugin>
-				      <plugin>
-				        <groupId>org.apache.maven.plugins</groupId>
-				        <artifactId>maven-failsafe-plugin</artifactId>
-				        <configuration>
-				          <skip>${skip.it}</skip>
-				        </configuration>
-      				</plugin>
-                </plugins>
-            </build>
-        </profile> -->
-        
-        <profiles>
+	
+       <!--  <profiles>
         <profile>
         <id>integration</id>
             <build>
@@ -181,36 +137,62 @@
                             <includes>
                                 <include>**/*TestIT.java</include>                              
                             </includes>
-				        		<!-- <skipTests>${skipTests}</skipTests>
-				        		<skipUTs>${skipUTs}</skipUTs> -->
 				        </configuration> 
 				        </plugin>                 		                                   
                 </plugins>
             </build>
         </profile>
-        </profiles>
+        </profiles> -->
   
  	<build>
         <plugins>
        		<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
+				<!-- <configuration>
 					<mainClass>com.bookstore.app.StoreApiDatabaseApplication</mainClass>
-				</configuration>
+				</configuration> -->
 			</plugin>
 			
 			<plugin>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>                         
-                             <excludes>
-                                <exclude>**/*TestIT.java</exclude>
-                            </excludes>                           
-                            <includes>
-                                <include>**/*Test.java</include>                              
-                            </includes>                       		               
-                        </configuration>
-             </plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <configuration>
+                    <skipTests>${integration-tests.skip}</skipTests>
+                    <includes>
+                        <include>**/*IT.java</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>${unit-tests.skip}</skipTests>
+                    <excludes>
+                        <exclude>**/*IT.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+			
+			<!-- <plugin>
+                  <artifactId>maven-surefire-plugin</artifactId>
+                  <configuration>                         
+                       <excludes>
+                          <exclude>**/*TestIT.java</exclude>
+                      </excludes>                           
+                      <includes>
+                          <include>**/*Test.java</include>                              
+                      </includes>                       		               
+                  </configuration>
+             </plugin> -->
 			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
