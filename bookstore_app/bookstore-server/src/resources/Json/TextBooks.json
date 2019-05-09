@@ -1,0 +1,22 @@
+
+ [   
+ 	{
+        "id": "1003",
+        "department": "CS",
+        "name": "Java intro",
+        "description": "this is java book",
+        "isbn": "23134",
+        "unitPrice": 223.4
+    }
+    ,
+    
+    {
+    	"id": "1004",
+        "department": "MS",
+        "name": "Java SE",
+        "description": "this is java book advance",
+        "isbn": "23134",
+        "unitPrice": 223.4
+    }
+
+  ]

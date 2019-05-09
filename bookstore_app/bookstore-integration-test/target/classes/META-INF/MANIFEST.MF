@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: suyogsomavanshi
+Build-Jdk: 11.0.1
+Implementation-Title: bookstore-integration-test
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.bookstore.app
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/bookstore/bookstore-integration-test
+Main-Class: com.bookstore.app.main
+Created-By: Maven Integration for Eclipse
+
