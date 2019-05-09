@@ -126,7 +126,7 @@
     <start-class>com.bookstore.app.main</start-class>
     <skip.surefire.tests>${skipTests}</skip.surefire.tests>
     </properties>
-	
+	 
 	<profiles>
         <profile>
             <id>build</id>
@@ -202,13 +202,15 @@
             </build>
         </profile>
         </profiles>
-        
   
  	<build>
         <plugins>
        		<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.bookstore.app.StoreApiDatabaseApplication</mainClass>
+				</configuration>
 			</plugin>
 			
 			<plugin>

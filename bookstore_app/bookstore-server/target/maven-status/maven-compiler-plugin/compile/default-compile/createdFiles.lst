@@ -1,5 +1,0 @@
-com/bookstore/app/controllers/TextBooksController.class
-com/bookstore/app/repositories/TextBooksRepository.class
-com/bookstore/app/StoreApiDatabaseApplication.class
-com/bookstore/app/models/TextBooks.class
-com/bookstore/app/services/TextBooksService.class
