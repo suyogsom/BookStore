@@ -149,9 +149,9 @@
        		<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<!-- <configuration>
+				<configuration>
 					<mainClass>com.bookstore.app.StoreApiDatabaseApplication</mainClass>
-				</configuration> -->
+				</configuration>
 			</plugin>
 			
 			<plugin>
