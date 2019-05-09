@@ -14,8 +14,9 @@ pipeline {
             	echo 'Deploying app...'
             	sh 'pwd'
             	sh 'ls -l bookstore_app/bookstore-integration-test/target/classes/bookstore-server-0.0.1-SNAPSHOT.jar'
-                sh 'nohup java -jar bookstore_app/bookstore-integration-test/target/classes/*.jar &'
-                sh 'cat nohup.out'
+                sh'java -jar bookstore_app/bookstore-integration-test/target/classes/*.jar'
+               //sh 'nohup java -jar bookstore_app/bookstore-integration-test/target/classes/*.jar &'
+               //sh 'cat nohup.out'
             }
         }
         
