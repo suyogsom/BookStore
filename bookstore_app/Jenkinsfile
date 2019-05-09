@@ -12,6 +12,7 @@ pipeline {
         stage('deploy app') {
             steps {
             	echo 'Deploying app...'
+            	sh 'pwd'
                 sh 'nohup java -jar bookstore_app/bookstore-integration-test/target/classes/*.jar &'
                 sh 'cat nohup.out'
             }
