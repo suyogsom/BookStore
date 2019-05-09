@@ -18,7 +18,7 @@ pipeline {
 				sh 'ls -l bookstore_app/bookstore-integration-test/target/classes/bookstore-server-0.0.1-SNAPSHOT.jar'
                 sh 'nohup java -jar bookstore_app/bookstore-integration-test/target/classes/*.jar &'			   
                 // wait for application to respond
-			    sh 'while ! httping -qc1 http://localhost:8080 ; do sleep 1 ; done'              
+			    //sh 'while ! httping -qc1 http://localhost:8080 ; do sleep 1 ; done'              
                //sh 'cat nohup.out'
             }
         }
